@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project basedir="." default="deploy">
+
+	<property name="src" value="."></property>
+	<property name="dest" value="WEB-INF/classes/"></property>
+	<property name="web" value="WEB-INF/web.xml"></property>
+	<property name="mf" value="META-INF/"></property>
+	<property name="ctxt" value="META-INF/context.xml"></property>
+	<property name="tomcat" value="C:\tomcat8\webapps"></property>
+	<property name="appli" value="pv4"></property>
+	<property name="tomcat.manager.url" value="http://192.168.1.16:8080/manager/text" />
+	<property name="tomcat.manager.username" value="admin" />
+	<property name="tomcat-manager-password" value="admin" />
+	<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" />
+	
+	<target name="war" depends="init">
+		<echo>creation du war</echo>
+		<war destfile="${appli}.war" webxml="${web}" manifest="${mf}/MANIFEST.MF" >
+			<classes dir="${dest}"/>
+			<fileset dir="${src}">
+				<include name="*.html"/>
+				<include name="*.jsp"/>
+				<include name="*.css"/>
+				<include name="*.properties"/>
+				<include name="*.js"/>
+				<include name="**/*.xml"/>
+				<include name="images/*.*"/>
+				<include name="WEB-INF/lib/*.*"/>
+				<include name="**/**/*.jar"/>
+				<exclude name="build.xml"/>
+			</fileset>
+		</war>
+
+	</target>
+	
+	<target name="deploy" depends="war">
+		<echo>deploiement</echo>
+		<copy file="${src}/${appli}.war" todir="${tomcat}"></copy>
+		<echo>déploiement effectué</echo>
+	</target>
+		
+	<target name="init" depends="clear">
+		<echo>initialisation</echo>		
+		<copy todir="${dest}/bdd">
+	    <fileset dir="${src}/bdd/">
+	    	<include name="*.class" />
+	    </fileset>
+	    </copy>	
+		<copy todir="${dest}/model">
+		<fileset dir="${src}/model">
+			<include name="*.class" />
+		 </fileset>
+		</copy>	
+		<copy todir="${dest}/ejb">
+				<fileset dir="${src}/ejb">
+					<include name="*.class" />
+				 </fileset>
+				</copy>
+		<copy todir="${dest}/ws">
+			    <fileset dir="${src}/ws/">
+			    	<include name="*.class" />
+			    </fileset>
+				</copy>
+		<mkdir  dir="${src}/WEB-INF/lib"/>
+				<copy todir="${src}/WEB-INF/lib">
+					<fileset dir="C:\workspaceJAVA\WS_FAR_V4\WebContent\WEB-INF\lib">
+						<include name="*.jar" />
+					</fileset>
+				</copy>
+		<echo>copie effectuee</echo>
+		
+	</target>
+	
+	<target name="clear">
+		  <delete>
+		    <fileset dir="${dest}" includes="**/*.class"/>
+			<fileset dir="${dest}" includes="**/*.jar"/>
+		  </delete>
+	</target>
+	
+	<target name="suppression" depends="clear" description="suppression de ce projet dans tomcat">
+	<undeploy
+	    url="${tomcat.manager.url}"
+	    username="${tomcat.manager.username}"
+	    password="${tomcat-manager-password}"
+	    path="/${appli}" 
+	  />
+	</target>
+	
+</project>
+
+

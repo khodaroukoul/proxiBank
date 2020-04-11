@@ -1,0 +1,334 @@
+body {
+	font-family: Arial;
+	background: url("images/2.jpg") no-repeat center fixed;
+	background-size: cover;
+}
+
+a {
+	text-decoration: none;
+}
+
+.affdate {
+	position: absolute;
+	top: 90%;
+	left: 90%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 255px;
+	text-align: center;
+	width: auto;
+}
+
+.affdate1 {
+	position: absolute;
+	-ms-transform: translate(-5%, -50%);
+	transform: translate(-5%, -50%);
+	width: 255px;
+	text-align: center;
+	width: auto;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0);
+}
+
+div.example1 {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+	width: 1000px;
+	border: none !important;
+	margin: auto;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0);
+}
+div.Dec{
+	height: 400px;
+	width: 350px;
+	position: absolute;
+	left:60%;
+	top:40%;
+	border: 2px solid lightgrey;
+	background: transparent;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+}
+.example1 h1 {
+	font-size: 2em;
+	color: white;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	/* Starting position */
+	-moz-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	/* Apply animation to this element */
+	-moz-animation: example1 10s linear infinite;
+	-webkit-animation: example1 10s linear infinite;
+	animation: example1 10s linear infinite;
+}
+/* Move it (define the animation) */
+@
+-moz-keyframes example1 { 0% {
+	-moz-transform: translateX(100%);
+}
+
+100%
+{
+-moz-transform
+:
+ 
+translateX
+(-100%);
+ 
+}
+}
+@
+-webkit-keyframes example1 { 0% {
+	-webkit-transform: translateX(100%);
+}
+
+100%
+{
+-webkit-transform
+:
+ 
+translateX
+(-100%);
+ 
+}
+}
+@
+keyframes example1 { 0% {
+	-moz-transform: translateX(100%); /* Firefox bug fix */
+	-webkit-transform: translateX(100%); /* Firefox bug fix */
+	transform: translateX(100%);
+}
+
+100%
+{
+-moz-transform
+:
+ 
+translateX
+(-100%); /* Firefox bug fix */
+
+ 
+-webkit-transform
+:
+ 
+translateX
+(-100%); /* Firefox bug fix */
+
+ 
+transform
+:
+ 
+translateX
+(-100%);
+ 
+ 
+}
+}
+.logo {
+	display: block;
+	margin: auto;
+}
+
+.avatar {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	border-radius: 50%;
+}
+
+h1, h2, h3, h4 {
+	text-align: center;
+	padding: 10px;
+	margin: 5px;
+	color: black;
+}
+
+div {
+	width: 100%;
+	border: 2px solid lightgrey;
+	background: transparent;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+}
+
+div.login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+input {
+	padding: 10px;
+	margin: 5px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 100px;
+}
+
+.select {
+	width: 100%;
+	cursor: text;
+	padding: 10px;
+	margin: 5px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input[class=text], input[class=password] {
+	width: 100%;
+	cursor: text;
+}
+
+input[class=submit], input[class=cancelbtn] {
+	background-color: #00BFFF;
+	color: white;
+	border: 1px solid #00BFFF;
+	font-weight: bold;
+	width:120px;
+}
+
+input[class=submit]:hover {
+	background-color: white;
+	color: #00BFFF;
+	border: 1px solid #00BFFF;
+}
+
+input[class=okbtn] {
+	background-color: green;
+	color: white;
+	border: 1px solid green;
+	font-weight: bold;
+	cursor: default;
+}
+
+input[class=errorbtn] {
+	width: 400px;
+	background-color: red;
+	color: white;
+	border: 1px solid red;
+	font-weight: bold;
+	cursor: default;
+}
+
+input[class=checkbox] {
+	float: left;
+}
+
+span.psw {
+	float: right;
+	padding-top: 15px;
+	border-radius: 10pxpadding-bottom: 15px;
+}
+
+div.menu-left {
+	width: 200px;
+	position: absolute;
+}
+
+
+div.menu-center {
+	width: auto;
+	position: absolute;
+	overflow: auto;
+	top: 1.1%;
+	left: 20%;
+}
+
+
+.menu-center1 {
+	width: auto;
+	position: absolute;
+	overflow: auto;
+	top: 1.1%;
+	right: 35%;
+}
+
+.menu-center2 {
+	width: auto;
+	position: absolute;
+	overflow: auto;
+	top: 1.1%;
+	right: 35%;
+}
+
+.menu-center3 {
+	width: auto;
+	position: absolute;
+	overflow: auto;
+	top: 1.1%;
+	right: 35%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+	padding: 5px;
+}
+form{
+	display:inline;
+}
+
+.histogramme {
+	position: absolute;
+	overflow: auto;
+	top: 40%;
+	left: 20%;	
+}
+
+.button-container form,
+.button-container form div {
+    display: inline;    
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+
+.highcharts-title {
+    font-weight: bold;
+}
+
+div.his-button{
+	height: 400px;
+	width: 350px;
+	position: absolute;
+	left:27%;
+	top:30%;
+	text-align: center;	
+	border:none;
+	box-shadow:none;
+}

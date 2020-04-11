@@ -1,0 +1,4 @@
+<Context path="/listClients" reloadable="true"	docBase="\listClients">
+	<ResourceLink name="jdbc/toto"	global="jdbc/toto"
+		type="javax.sql.DataSource"/>
+</Context>
